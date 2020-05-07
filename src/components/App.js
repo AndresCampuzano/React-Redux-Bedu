@@ -13,7 +13,7 @@ class App extends Component {
 		const response = await axios.get(
 			'https://jsonplaceholder.typicode.com/users'
 		);
-		console.log('respuesta: ', response.data);
+		console.log('Respuesta: ', response.data);
 
 		this.setState({
 			users: response.data,
