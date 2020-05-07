@@ -1,18 +1,10 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import { connect } from 'react-redux';
 
 import * as userActions from '../../actions/userActions';
 
 class Users extends Component {
 	componentDidMount() {
-		// const response = await axios.get(
-		// 	'https://jsonplaceholder.typicode.com/users'
-		// );
-		// console.log('Respuesta: ', response.data);
-		// this.setState({
-		// 	users: response.data,
-		// });
 		this.props.bringAll();
 	}
 
@@ -26,8 +18,6 @@ class Users extends Component {
 		));
 
 	render() {
-		console.log(this.props);
-
 		return (
 			<div>
 				<table className='table'>
