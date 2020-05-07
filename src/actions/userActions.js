@@ -17,7 +17,7 @@ export const bringAll = () => async (dispatch) => {
 		console.log('Error: ', error.message);
 		dispatch({
 			type: ERROR,
-			payload: error.message,
+			payload: 'There is something wrong, please try again later.',
 		});
 	}
 };
