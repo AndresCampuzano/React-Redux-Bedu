@@ -31,3 +31,7 @@ body {
 	font-weight: bold;
 	text-decoration: none;
 }
+
+.center {
+	text-align: center;
+}

@@ -1,11 +1,23 @@
 import axios from 'axios';
+import { BRING_ALL, LOADING, ERROR } from '../types/userTypes';
 
 export const bringAll = () => async (dispatch) => {
-	const response = await axios.get(
-		'https://jsonplaceholder.typicode.com/users'
-	);
 	dispatch({
-		type: 'bring_users',
-		payload: response.data,
+		type: LOADING,
 	});
+	try {
+		const response = await axios.get(
+			'https://jsonplaceholder.typicode.com/users'
+		);
+		dispatch({
+			type: BRING_ALL,
+			payload: response.data,
+		});
+	} catch (error) {
+		console.log('Error: ', error.message);
+		dispatch({
+			type: ERROR,
+			payload: error.message,
+		});
+	}
 };
